@@ -9,6 +9,7 @@
 # Companies
 chulo = Company.find_or_create_by!(name: 'Chulo Solutions Pvt. Ltd.')
 namespace = Company.find_or_create_by!(name: 'Namespace Inc.')
+secret = Company.find_or_create_by!(name: 'Secrets Shop Pvt. Ltd.')
 
 # Quotes
 first = Quote.find_or_create_by!(company: chulo, name: 'First quote')
@@ -25,3 +26,10 @@ manager = User.create(company: chulo,
 eavesdropper = User.create(company: namespace,
                            email: 'eavesdropper@namespace.jp',
                            password: 'password')
+admin = User.create(company: secret,
+                    email: 'admin@secretshop.com.np',
+                    password: 'password')
+
+# Line item dates
+today = LineItemDate.find_or_create_by!(quote: first, date: Date.current)
+next_week = LineItemDate.find_or_create_by!(quote: second, date: Date.current + 1.week)
