@@ -33,3 +33,27 @@ admin = User.create(company: secret,
 # Line item dates
 today = LineItemDate.find_or_create_by!(quote: first, date: Date.current)
 next_week = LineItemDate.find_or_create_by!(quote: second, date: Date.current + 1.week)
+
+# Line items
+room_today = LineItem.find_or_create_by!(line_item_date: today,
+                                         name: 'Meeting room',
+                                         description: 'A cosy meeting room for 10 people',
+                                         quantity: 1,
+                                         unit_price: 1000)
+
+catering_today = LineItem.find_or_create_by!(line_item_date: today,
+                                             name: 'Meal tray',
+                                             description: 'Our delicious meal tray',
+                                             quantity: 10, unit_price: 25)
+
+room_next_week = LineItem.find_or_create_by!(line_item_date: next_week,
+                                             name: 'Meeting room',
+                                             description: 'A cosy meeting room for 10 people',
+                                             quantity: 1,
+                                             unit_price: 1000)
+
+catering_next_week = LineItem.find_or_create_by!(line_item_date: next_week,
+                                                 name: 'Meal tray',
+                                                 description: 'Our delicious meal tray',
+                                                 quantity: 10,
+                                                 unit_price: 25)
