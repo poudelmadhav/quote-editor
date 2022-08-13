@@ -1,0 +1,28 @@
+.devise {
+  &__inputs {
+    display: flex;
+    margin-top: var(--space-m);
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+  &__remember-me {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+    gap: var(--space-s);
+
+    &__label {
+      // reset visually hidden previouly set from simple form
+      position: unset !important;
+      margin: unset !important;
+      height: unset !important;
+      width: unset !important;
+      cursor: pointer;
+    }
+
+    &__input {
+      cursor: pointer;
+    }
+  }
+}
