@@ -1,0 +1,7 @@
+.quote-show {
+  margin-bottom: 5rem;
+
+  @include media(tabletAndUp) {
+    margin-bottom: 7rem;
+  }
+}
